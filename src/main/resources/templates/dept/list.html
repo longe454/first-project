@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<script src="/sb1/js/jquery-3.3.1.js"></script>
+<script>
+    function fun_onload() {
+        alert("ert");
+        $.ajax ({
+            type:'get',
+            url:'/sb1/dept/findAll.action',
+            success:function (msg) {
+                if (msg.code==200){
+                    alert(msg.msg);
+                    alert(msg.data);
+                } else {
+                    alert(msg.msg);
+                }
+            }
+        })
+    }
+</script>
+<body onload="fun_onload()">
+    <div >部门详情</div>
+</body>
+</html>
